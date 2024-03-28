@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    color: #a2acb6;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a,
+div {
+    text-decoration: none;
+}
+
+body {
+    background-color: #1C1C21;
+    margin: 0; /* Забираємо відступи по замовчуванню */
+    font-family: Arial, sans-serif; /* Замініть шрифт на потрібний */
+}
+.modal{
+    background-color: #212429
+}
+
+.header {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1C1C21; /* Колір вашого header */
+    z-index: 999; /* Це значення z-index може відрізнятися в залежності від вашого потреб */
+    display: flex;
+    align-items: center;
+}   
+.project-logo{
+    font-size: 18px;
+    margin-left:40px;
+    font-weight: bold;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px; /* Висота білої полоси */
+    background-color: white; /* Колір білої полоси */
+    z-index: 1; /* Забезпечуємо, що полоса буде знаходитися під контентом */
+}
+
+button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer; /* Додаємо вказівник курсору */
+}
+
+.App{
+    display: flex;
+}
+.main {
+    display: flex;
+}
+
+.sidebar {
+    width: 307px;
+    background-color: #1C1C21;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центруємо вміст по вертикалі */
+    margin-top: 96px;
+    position: fixed;
+}
+.menu{
+    height: 293px;
+    width: 275px;
+    background-color:#1C1C21;
+    
+}
+.projectinfo{
+    height: 45px;
+    display: flex;
+}
+.img-project{
+    margin-right: 12px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.project-name{
+    font-size: 16px;
+}
+.project-status{
+    font-size: 14px;
+    color:#0EB20A;
+}
+li{
+    list-style-type: none;
+}
+.buttons{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.button{
+    display: flex;
+    margin-top: 8px;
+    height: 40px;
+    align-items: center;
+    width: 100%;
+}
+.icon{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.button-text{
+    margin-left: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+.buttons li:hover {
+    background-color: #3C3D41; /* Цвет подсветки при наведении */
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Забезпечуємо автоматичний перенос стовпців на малих екранах */
+    justify-content: center; /* Центруємо стовпці по горизонталі */
+    gap: 10px; /* Додаємо проміжок між стовпцями */
+    margin-top:96px;
+    margin-left: 307px;
+}
+
+.column {
+    width: 250px;
+    min-height: 100px;
+    margin-left: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212429;
+    border-radius: 15px;
+    padding: 10px; /* Додаємо внутрішні відступи */
+    margin-bottom: 10px; /* Додаємо зовнішній відступ між стовпцями */
+}
+
+.object {
+    width: 95%;
+    min-height: 30px;
+    background-color: #22272b;
+    margin-bottom: 5px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центруємо об'єкти по вертикалі */
+    border-radius: 15px;
+    padding: 5px 10px; /* Додаємо внутрішні відступи */
+}
+
+.delete-button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 12px;
+}
+
+.delete-col {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.createCol {
+    height: 50px;
+    width: 150px; /* Додаємо відсутню одиницю виміру */
+    background-color: #3C3D41; /* Цвет подсветки при наведении */
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центруємо текст кнопки */
+}
+
+.createCol-title {
+    color: #fff;
+}
+
+.column-title {
+    margin-top: 10px;
+    color: #fff; /* Змінюємо колір тексту заголовка стовпця */
+}
+
+.createObj {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.object{
+    margin: 10px 5px;
+}
+.object-title {
+    margin: 5px 10px;
+    color: #88939d;
+}
+
+.object-title:hover,
+.delete-button:hover,
+.delete-col:hover {
+    color: red;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3C3D41; /* Цвет подсветки при наведении */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    height: 600px;
+    width: 500px;
+    border-radius: 15px; /* Додаємо кутовість модальному вікну */
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 400px; /* Обмежуємо максимальну ширину вмісту модального вікна */
+    margin: 0 auto;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+}
+#projectName{
+    background-color: #64697a;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Додаємо кутовість кнопці */
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000; /* Змінюємо колір хрестика закриття */
+}
+
+.main-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.place-text{
+    margin-left: -105px;
+}
